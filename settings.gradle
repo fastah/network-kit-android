@@ -1,0 +1,1 @@
+include ':examples:app', ':networkkit-android-extensions'

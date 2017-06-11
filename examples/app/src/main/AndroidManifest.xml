@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.getfastah.networkkit.testapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.getfastah.exampleswithfastahnetworkkit.DemoAudioVideoPreloadActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Replace the android:value with the application name that has been provisioned -->
+        <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationName"
+            android:value="com.getfastah.networkkit.testapp" />
+        <!-- Replace the android:value with the key provided to you. -->
+        <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationKey"
+            android:value="aws::us-east-2:d251546e-acb1-4b87-af05-f8629407e681" />
+    </application>
+</manifest>
