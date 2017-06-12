@@ -1,5 +1,6 @@
 <!-- MarkdownTOC -->
 
+- [Examples](#list-of-examples)
 - [Quick Start Guide](#quick-start-guide)
     - [Installation](#installation)
     - [Integration](#integration)
@@ -8,6 +9,11 @@
 - [License](#license)
 
 <!-- /MarkdownTOC -->
+
+<a name="list-of-examples"></a>
+# Examples with Fastah Network Kit
+This repository provides sample code to builds solutions and behaviours using Fastah Network Kit for Android. Availabe examples are:
+* Video pre-loader: tells an app when it's a good time to pre-fetch audio or video media to the device, thereby improving UX or engagement when network conditions are flaky. See [DemoAudioVideoPreloadActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java)
 
 <a name="quick-start-guide"></a>
 # Quick Start Guide
@@ -29,8 +35,8 @@ Next, add Fastah to the `dependencies` section in *app/build.gradle*
 compile 'com.getfastah.networkkit:networkkit-android-core:0.11.+'
 ```
 
-### Permissions in *app/src/main/AndroidManifest.xml*, these are also merged automatically via the library's own Manifest file.
-
+### Permissions in *app/src/main/AndroidManifest.xml*
+These are also merged automatically via the library's own Manifest file via [Android's manifest merging](https://developer.android.com/studio/build/manifest-merge.html).
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -43,7 +49,7 @@ compile 'com.getfastah.networkkit:networkkit-android-core:0.11.+'
 
 ### Initialization
 
-Initialize Fastah in your main activity *examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java*. Usually this should be done in [onCreate](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)).
+Initialize Fastah in your [main activity](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java). Usually this should be done in [onCreate](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)).
 
 ```java
 MeasureManager.getInstance().init(this);
