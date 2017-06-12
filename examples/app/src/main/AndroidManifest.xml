@@ -19,11 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Replace the android:value with the application name that has been provisioned -->
+        <!-- Replace the android:value with the application name, usually the same as package name of the app -->
         <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationName"
-            android:value="com.getfastah.networkkit.testapp" />
-        <!-- Replace the android:value with the key provided to you. -->
+            android:value="YOUR_APPLICATION_ID" />
+        <!-- Replace the android:value with the key provided to you by Fastah support (support@getfastah.com) for this application ID. -->
         <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationKey"
-            android:value="aws::us-east-2:d251546e-acb1-4b87-af05-f8629407e681" />
+            android:value="YOUR_APPLICATION_KEY" />
     </application>
 </manifest>
