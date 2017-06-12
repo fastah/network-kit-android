@@ -54,14 +54,14 @@ Initialize Fastah in your [main activity](examples/app/src/main/java/com/getfast
 ```java
 MeasureManager.getInstance().init(this);
 ```
-Before the call the above initialization methodthough, you have to configure your app-specific key in your app's *app/src/main/AndroidManifest.xml*. Replace `YOUR_APPLICATION_KEY` with the key provided to you by support@getfastah.com, and the corresponding Google Play Store application ID (e.g com.organization.myapp) in place of YOUR_APPLICATION_ID below. 
+Before the `init()` call above succeeds though, the app-specific key needs to be configured in the *app/src/main/AndroidManifest.xml*. In the Manifest snippet below, replace `YOUR_APPLICATION_ID` and `YOUR_APPLICATION_KEY` with your app ID (e.g in the Play Store), and the key received from [support@getfastah.com](mailto:support@getfastah.com) and re-build your app. 
 
 ```xml
 <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationName" android:value="YOUR_APPLICATION_ID" />
 <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationKey" android:value="YOUR_APPLICATION_KEY" />
 ```
 
-### Tracking
+### Network sensing & Network watching
 
 With the `MeasureManager` object created in [the last step](#integration) a call to `measureOnce` is all you need to start measuring network conditions using Fastah's geo-distributed server endpoints.
 
