@@ -55,7 +55,7 @@ Initialize Fastah in your [main activity](examples/app/src/main/java/com/getfast
 ```java
 MeasureManager.getInstance().init(this);
 ```
-Before the `init()` call above succeeds though, the app-specific key needs to be configured in the *app/src/main/AndroidManifest.xml*. In the Manifest snippet below, replace `YOUR_APPLICATION_ID` and `YOUR_APPLICATION_KEY` with your app ID (e.g in the Play Store), and the key received from [support@getfastah.com](mailto:support@getfastah.com) and re-build your app. 
+Before the `init()` call above succeeds though, the app-specific key needs to be configured in the [app's AndroidManifest.xml](examples/app/src/main/AndroidManifest.xml). Replace `YOUR_APPLICATION_ID` and `YOUR_APPLICATION_KEY` with the application ID (e.g the Play Store app identifier), and the key obtained from [support@getfastah.com](mailto:support@getfastah.com). Now, build your app. 
 
 ```xml
 <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationName" android:value="YOUR_APPLICATION_ID" />
