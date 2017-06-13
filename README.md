@@ -1,19 +1,20 @@
 <!-- MarkdownTOC -->
-
-- [Examples](#list-of-examples)
+- [Examples with Fastah API](#list-of-examples)
 - [Quick Start Guide](#quick-start-guide)
     - [Installation](#installation)
     - [Integration](#integration)
 - [I want to know more!](#i-want-to-know-more)
-- [Want to Contribute?](#want-to-report-a-problem)
+- [Help](#want-to-report-a-problem)
 - [License](#license)
-
 <!-- /MarkdownTOC -->
 
 <a name="list-of-examples"></a>
-# Examples with Fastah Network Kit
-This repository provides sample code to builds solutions and behaviours using Fastah Network Kit for Android. Availabe examples are:
-* Video pre-loader: tells an app when it's a good time to pre-fetch audio or video media to the device, thereby improving UX or engagement when network conditions are flaky. See [DemoAudioVideoPreloadActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java)
+# Examples with Fastah API
+This repository provides sample code to build network-aware Android apps using Fastah Network Kit for Android. 
+
+Availabe examples are:
+* Media pre-loader: An implementation of network-aware audio or video pre-fetching, which can improve UX or views when network conditions are flaky. See [DemoAudioVideoPreloadActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java)
+
 
 <a name="quick-start-guide"></a>
 # Quick Start Guide
@@ -90,9 +91,10 @@ No worries, here are some links that you will find useful:
 Have any questions? Reach out to [support@getfastah.com](mailto:support@getfastah.com) to speak to someone smart, quickly.
 
 <a name="want-to-report-a-problem"></a>
-# Help!
+# Help
 
-roblem descriptions in the Issue tracker, or via [support@getfastah.com](mailto:support@getfastah.com)
+Please report any problems in this Github project's Issues section, or via email to [support@getfastah.com](mailto:support@getfastah.com). 
+On Twitter, ping [Siddharth Mathur at @s8mathur](https://twitter.com/s8mathur)]
 
 <a name="license"></a>
 # License
