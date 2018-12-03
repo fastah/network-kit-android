@@ -33,7 +33,7 @@ maven { url 'http://maven.getfastah.com/libs-release' }
 
 Next, add Fastah to the `dependencies` section in *app/build.gradle*
 ```gradle
-compile 'com.getfastah.networkkit:networkkit-android-core:1.5.+'
+compile 'com.getfastah.networkkit:networkkit-android-core:1.6.+'
 ```
 
 ### Permissions in *app/src/main/AndroidManifest.xml*
@@ -48,23 +48,26 @@ These are also merged automatically via the library's own Manifest file via [And
 <a name="integration"></a>
 ## Integration
 
-### Initialization
+### Configuration
 
-Initialize Fastah in your [main activity](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java). Usually this should be done in [onCreate](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)).
-
-```java
-MeasureManager.getInstance().init(this);
-```
-Before the `init()` call above succeeds though, the app-specific key needs to be configured in the [app's AndroidManifest.xml](examples/app/src/main/AndroidManifest.xml). Replace `YOUR_APPLICATION_ID` and `YOUR_APPLICATION_KEY` with the application ID (e.g the Play Store app identifier), and the key obtained from [support@getfastah.com](mailto:support@getfastah.com). Now, build your app. 
+Before using Fastah's `MeasureManager` interface, configure the app-specific key in the [app's AndroidManifest.xml](examples/app/src/main/AndroidManifest.xml). Replace `YOUR_APPLICATION_ID` and `YOUR_APPLICATION_KEY` with the application ID (e.g "com.mycompany") and the key (e.g `fnk.XYZ`), obtained from the welcome email sent from [support@getfastah.com](mailto:support@getfastah.com). Now, build your app. 
 
 ```xml
 <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationName" android:value="YOUR_APPLICATION_ID" />
 <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationKey" android:value="YOUR_APPLICATION_KEY" />
 ```
 
+You can debug initialization state for Fastah by using Android Studio's Logcat window: look for message prefix `FastahNetworkKit`.
+
+To start using `MeasureManager`, use the `getInstance` accessor below, such as from within your [Activity](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java).
+
+```java
+MeasureManager.getInstance(getApplicationContext()).measureOnce();
+```
+
 ### Network sensing & Network watching
 
-With the `MeasureManager` object created in [the last step](#integration) a call to `measureOnce` is all you need to start measuring network conditions using Fastah's geo-distributed server endpoints.
+With the `MeasureManager` object created in [the previous step](#integration) a call to `measureOnce` is all you need to start measuring network conditions using Fastah's geo-distributed server endpoints.
 
 ```java
 MeasureManager.MeasurementCompletedListener mListener;
@@ -78,7 +81,7 @@ mListener = new MeasureManager.MeasurementCompletedListener() {
 MeasureManager.getInstance().register(mListener);
 
 // Call this as often as you like to get real-time network conditions
-MeasureManager.getInstance().measureOnce(ctx);
+MeasureManager.getInstance(ctx).measureOnce();
 ```
 
 <a name="i-want-to-know-more"></a>
@@ -94,7 +97,7 @@ Have any questions? Reach out to [support@getfastah.com](mailto:support@getfasta
 # Help
 
 Please report any problems in this Github project's Issues section, or via email to [support@getfastah.com](mailto:support@getfastah.com). 
-On Twitter, ping [Siddharth Mathur at @s8mathur](https://twitter.com/s8mathur)]
+On Twitter, ping [@getfastah](https://twitter.com/getfastah)]
 
 <a name="license"></a>
 # License
