@@ -149,8 +149,7 @@ public class NetworkAwareVideoPreloader {
         }
 
 
-        MeasureManager manager = MeasureManager.getInstance();
-        manager.init(ctx);
+        final MeasureManager manager = MeasureManager.getInstance(ctx);
         manager.register(internalHandler);
         Log.d(TAG, "Triggering network measurement");
         manager.measureOnce(ctx, "_VID");
