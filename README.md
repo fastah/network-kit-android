@@ -33,7 +33,7 @@ maven { url 'http://maven.getfastah.com/libs-release' }
 
 Next, add Fastah to the `dependencies` section in *app/build.gradle*
 ```gradle
-compile 'com.getfastah.networkkit:networkkit-android-core:1.6.+'
+compile 'com.getfastah.networkkit:networkkit-android-core:1.8.+'
 ```
 
 ### Permissions in *app/src/main/AndroidManifest.xml*
