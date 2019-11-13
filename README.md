@@ -15,12 +15,6 @@ This repository provides sample code to build network-aware Android apps using F
 Availabe examples are:
 * Media pre-loader: An implementation of network-aware audio or video pre-fetching, which can improve UX or views when network conditions are flaky. See [DemoAudioVideoPreloadActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java)
 
-
-<a name="quick-start-guide"></a>
-# Quick Start Guide
-
-Check out our **[official documentation](https://getfastah.com/docs/api)** for more in depth information on installing and using Fastah on Android.
-
 <a name="installation"></a>
 ## Installation
 
@@ -89,7 +83,7 @@ MeasureManager.getInstance(ctx).measureOnce();
 
 No worries, here are some links that you will find useful:
 * **[Sample app](https://github.com/fastah/network-kit-android/blob/master/examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java)**
-* **[Full API Reference](https://getfastah.com/docs/api)**
+* **[Full API Reference](https://fastahproject.com/pub/fastah-sdk-android/javadoc/)**
 
 Have any questions? Reach out to [support@getfastah.com](mailto:support@getfastah.com) to speak to someone smart, quickly.
 
