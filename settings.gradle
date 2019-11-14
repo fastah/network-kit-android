@@ -1,1 +1,1 @@
-include ':examples:app', ':networkkit-android-extensions'
+include ':examples:app'

@@ -13,7 +13,7 @@
 This repository provides sample code to build network-aware Android apps using Fastah Network Kit for Android. 
 
 Availabe examples are:
-* Media pre-loader: An implementation of network-aware audio or video pre-fetching, which can improve UX or views when network conditions are flaky. See [DemoAudioVideoPreloadActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java)
+* Media pre-loader: An implementation of network-aware audio or video pre-fetching, which can improve UX or views when network conditions are flaky. See [SampleActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java)
 
 <a name="installation"></a>
 ## Installation
@@ -53,7 +53,7 @@ Before using Fastah's `MeasureManager` interface, configure the app-specific key
 
 You can debug initialization state for Fastah by using Android Studio's Logcat window: look for message prefix `FastahNetworkKit`.
 
-To start using `MeasureManager`, use the `getInstance` accessor below, such as from within your [Activity](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java).
+To start using `MeasureManager`, use the `getInstance` accessor below, such as from within your [Activity](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java).
 
 ```java
 MeasureManager.getInstance(getApplicationContext()).measureOnce();
@@ -82,7 +82,7 @@ MeasureManager.getInstance(ctx).measureOnce();
 # I want to know more!
 
 No worries, here are some links that you will find useful:
-* **[Sample app](https://github.com/fastah/network-kit-android/blob/master/examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/DemoAudioVideoPreloadActivity.java)**
+* **[Sample app](https://github.com/fastah/network-kit-android/blob/master/examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java)**
 * **[Full API Reference](https://fastahproject.com/pub/fastah-sdk-android/javadoc/)**
 
 Have any questions? Reach out to [support@getfastah.com](mailto:support@getfastah.com) to speak to someone smart, quickly.
