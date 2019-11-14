@@ -13,7 +13,7 @@
 This repository provides sample code to build network-aware Android apps using Fastah Network Kit for Android. 
 
 Availabe examples are:
-* Media pre-loader: An implementation of network-aware audio or video pre-fetching, which can improve UX or views when network conditions are flaky. See [SampleActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java)
+* Simple getting started app with logging: [SampleActivity.java](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java)
 
 <a name="installation"></a>
 ## Installation
