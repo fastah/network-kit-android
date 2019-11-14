@@ -59,7 +59,7 @@ The following permissions are merged automatically via the library's own Manifes
 ```
 
 #### Network security configuration
-Ensure that your app-level project has an application-level network security file [app/res/xml/network_security_config.xml](https://developer.android.com/training/articles/security-config) which should look like this [sample[(examples/app/res/xml/network_security_config.xml)
+Ensure that your app-level project has [Android's standard network security](https://developer.android.com/training/articles/security-config) configured defined via [app/res/xml/network_security_config.xml](examples/app/res/xml/network_security_config.xml)
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest ... >
@@ -69,7 +69,7 @@ Ensure that your app-level project has an application-level network security fil
 ```
 
 #### Allowing AWS Cloudfront for plain HTTP
-While ensuring that the following matches your app's and organization security standards, add the following allow rule for non-encrypted HTTP to your [app/res/xml/network_security_config.xml] file. This allows Fastah Network Kit to reach AWS Lamba@Edge edge locations for latency checks. 
+While ensuring that the following matches your app's and organization security standards, add the following allow rule for non-encrypted HTTP to the [app/res/xml/network_security_config.xml](examples/app/res/xml/network_security_config.xml) file. This allows Fastah Network Kit to reach AWS Lamba@Edge edge locations for latency checks. 
 ```
 <network-security-config>
     <!-- Add the single non-secure HTTP allow rule below for Fastah Network Kit network probes -->
