@@ -52,10 +52,15 @@ Before using Fastah's `MeasureManager` interface, configure the app-specific key
 #### Permissions configuration
 The following permissions are merged automatically via the library's own Manifest file via [Android's manifest merging](https://developer.android.com/studio/build/manifest-merge.html).
 ```xml
+<!-- Normal permissions -->
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!-- Special permissions -->
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
 #### Network security configuration
