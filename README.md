@@ -59,7 +59,7 @@ The following permissions are merged automatically via the library's own Manifes
 ```
 
 #### Network security configuration
-Ensure that your app-level project has [Android's standard network security](https://developer.android.com/training/articles/security-config) configured defined via [res/xml/network_security_config.xml](examples/app/src/main/res/xml/network_security_config.xml)
+Ensure that your Manifest mentions an app-level [Android-standard network security configuration XML](https://developer.android.com/training/articles/security-config). For this, one needs to create a [res/xml/network_security_config.xml](examples/app/src/main/res/xml/network_security_config.xml) file and mention it in the Manifest's application attributes list as show below. 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest ... >
