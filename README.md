@@ -27,16 +27,47 @@ maven { url 'http://maven.getfastah.com/libs-release' }
 
 Next, add Fastah to the `dependencies` section in *app/build.gradle*
 ```gradle
-compile 'com.getfastah.networkkit:networkkit-android-core:1.8.+'
+    // Fastah Network Kit core library
+    implementation 'com.getfastah.networkkit:networkkit-android-core:1.8.16'
+    // Fastah Network Kit dependencies
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.6'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.firebase:firebase-iid:20.0.0'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.16.3'
+    implementation 'com.amazonaws:aws-android-sdk-kinesis:2.16.3'
 ```
 
-### Permissions in *app/src/main/AndroidManifest.xml*
-These are also merged automatically via the library's own Manifest file via [Android's manifest merging](https://developer.android.com/studio/build/manifest-merge.html).
+### AndroidManifest.xml configuration
+The following permissions are merged automatically via the library's own Manifest file via [Android's manifest merging](https://developer.android.com/studio/build/manifest-merge.html).
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.WAKE_LOCK" />
+```
+
+About network protocol security, ensure that the application section of the Manifest mentions your centralized application-level network security file [app/res/xml/network_security_config.xml](https://developer.android.com/training/articles/security-config).
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ... >
+    <application android:networkSecurityConfig="@xml/network_security_config"
+                    ... >
+        ...
+    </application>
+</manifest>
+```
+
+### Allowing AWS Cloudfront for plain HTTP
+While ensuring that the following matches your app's and organization security standards, add the following allow rule for non-encrypted HTTP to your [app/res/xml/network_security_config.xml] file. This allows Fastah Network Kit to reach AWS Lamba@Edge edge locations for latency checks. 
+```
+<network-security-config>
+     ...
+    <domain-config cleartextTrafficPermitted="true">
+        ...
+        <domain includeSubdomains="true">cloudfront.net</domain>
+    </domain-config>
+    ...
+</network-security-config>
 ```
 
 <a name="integration"></a>
