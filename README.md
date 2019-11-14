@@ -37,39 +37,6 @@ Next, add Fastah to the `dependencies` section in *app/build.gradle*
     implementation 'com.amazonaws:aws-android-sdk-kinesis:2.16.3'
 ```
 
-### AndroidManifest.xml configuration
-The following permissions are merged automatically via the library's own Manifest file via [Android's manifest merging](https://developer.android.com/studio/build/manifest-merge.html).
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.WAKE_LOCK" />
-```
-
-About network protocol security, ensure that the application section of the Manifest mentions your centralized application-level network security file [app/res/xml/network_security_config.xml](https://developer.android.com/training/articles/security-config).
-```
-<?xml version="1.0" encoding="utf-8"?>
-<manifest ... >
-    <application android:networkSecurityConfig="@xml/network_security_config"
-                    ... >
-        ...
-    </application>
-</manifest>
-```
-
-### Allowing AWS Cloudfront for plain HTTP
-While ensuring that the following matches your app's and organization security standards, add the following allow rule for non-encrypted HTTP to your [app/res/xml/network_security_config.xml] file. This allows Fastah Network Kit to reach AWS Lamba@Edge edge locations for latency checks. 
-```
-<network-security-config>
-     ...
-    <domain-config cleartextTrafficPermitted="true">
-        ...
-        <domain includeSubdomains="true">cloudfront.net</domain>
-    </domain-config>
-    ...
-</network-security-config>
-```
-
 <a name="integration"></a>
 ## Integration
 
@@ -82,7 +49,39 @@ Before using Fastah's `MeasureManager` interface, configure the app-specific key
 <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationKey" android:value="YOUR_APPLICATION_KEY" />
 ```
 
-You can debug initialization state for Fastah by using Android Studio's Logcat window: look for message prefix `FastahNetworkKit`.
+#### Permissions configuration
+The following permissions are merged automatically via the library's own Manifest file via [Android's manifest merging](https://developer.android.com/studio/build/manifest-merge.html).
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+```
+
+#### Network security configuration
+Ensure that your app-level project has an application-level network security file [app/res/xml/network_security_config.xml](https://developer.android.com/training/articles/security-config) which should look like this [sample[(examples/app/res/xml/network_security_config.xml)
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ... >
+    <application android:networkSecurityConfig="@xml/network_security_config"
+    </application>
+</manifest>
+```
+
+#### Allowing AWS Cloudfront for plain HTTP
+While ensuring that the following matches your app's and organization security standards, add the following allow rule for non-encrypted HTTP to your [app/res/xml/network_security_config.xml] file. This allows Fastah Network Kit to reach AWS Lamba@Edge edge locations for latency checks. 
+```
+<network-security-config>
+    <!-- Add the single non-secure HTTP allow rule below for Fastah Network Kit network probes -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">cloudfront.net</domain>
+    </domain-config>
+</network-security-config>
+```
+
+### Running the application
+
+Once you have configured the keys and configured security, you may launch the application, and monitor Fastah's initialization state using Android Studio's Logcat window: look for message prefix `FastahNetworkKit`.
 
 To start using `MeasureManager`, use the `getInstance` accessor below, such as from within your [Activity](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java).
 
