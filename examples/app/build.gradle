@@ -11,13 +11,19 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        // Allows you read your private/secret Google Maps key from a key+value pair in local.properties
+        // Allows you read your private/secret API keys from key+value pair(s) in the project root's local.properties file
         Properties properties = new Properties()
         properties.load(project.rootProject.file('local.properties').newDataInputStream())
-        def key = properties.getProperty('google.map.key')
-        println "Google Maps Key: ${key}"
+
+        def keyFastah = properties.getProperty('fastah.kit.key')
+        println "Fastah Network Kit key: ${keyFastah}"
+
+        def keyGoogle = properties.getProperty('google.map.key')
+        println "Google Maps key: ${keyGoogle}"
+
         manifestPlaceholders = [
-                googleMapApiKey: key
+                fastahKitKey: keyFastah,
+                googleMapApiKey: keyGoogle
         ]
     }
     buildTypes {

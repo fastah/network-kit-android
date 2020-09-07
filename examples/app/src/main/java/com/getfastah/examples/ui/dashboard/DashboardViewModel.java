@@ -1,19 +1,27 @@
 package com.getfastah.examples.ui.dashboard;
 
+import android.app.Application;
+import android.location.Location;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+import com.getfastah.examples.LocationLiveData;
+import com.getfastah.examples.NetworkLatencyLiveData;
 
-    private MutableLiveData<String> mText;
+public class DashboardViewModel extends AndroidViewModel {
 
-    public DashboardViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+    private NetworkLatencyLiveData mLatencyLive;
+
+    public DashboardViewModel(@NonNull Application application) {
+        super(application);
+        mLatencyLive = new NetworkLatencyLiveData(application.getApplicationContext());
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public NetworkLatencyLiveData getNetworkLatencyData() {
+        return mLatencyLive;
     }
 }

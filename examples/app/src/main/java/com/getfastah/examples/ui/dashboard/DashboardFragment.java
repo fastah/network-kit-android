@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.getfastah.networkkit.MeasureSample;
 import com.getfastah.networkkit.testapp.R;
 
 public class DashboardFragment extends Fragment {
@@ -24,10 +25,10 @@ public class DashboardFragment extends Fragment {
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        dashboardViewModel.getNetworkLatencyData().observe(getViewLifecycleOwner(), new Observer<MeasureSample>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onChanged(@Nullable MeasureSample s) {
+                textView.setText(s.toString());
             }
         });
         return root;
