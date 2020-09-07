@@ -28,7 +28,7 @@ maven { url 'http://maven.getfastah.com/libs-release' }
 Next, add Fastah to the `dependencies` section in *app/build.gradle*
 ```gradle
     // Fastah Network Kit core library
-    implementation 'com.getfastah.networkkit:networkkit-android-core:1.8.20'
+    implementation 'com.getfastah.networkkit:networkkit-android-core:1.9.16'
     // Fastah Network Kit dependencies
     implementation 'com.firebase:firebase-jobdispatcher:0.8.6'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
