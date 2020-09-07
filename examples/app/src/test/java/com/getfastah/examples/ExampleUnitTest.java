@@ -1,4 +1,4 @@
-package com.getfastah.exampleswithfastahnetworkkit;
+package com.getfastah.examples;
 
 import org.junit.Test;
 

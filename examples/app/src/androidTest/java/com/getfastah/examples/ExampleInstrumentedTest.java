@@ -1,4 +1,4 @@
-package com.getfastah.exampleswithfastahnetworkkit;
+package com.getfastah.examples;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.getfastah.exampleswithfastahnetworkkit", appContext.getPackageName());
+        assertEquals("com.getfastah.examples", appContext.getPackageName());
     }
 }
