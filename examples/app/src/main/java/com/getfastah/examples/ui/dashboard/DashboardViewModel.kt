@@ -16,6 +16,8 @@ import kotlinx.coroutines.withContext
 class DashboardViewModel(application: Application, private val fastahDatabase: FastahDatabase) : AndroidViewModel(application) {
     val networkLatencyData: NetworkLatencyLiveData = NetworkLatencyLiveData(application.applicationContext)
 
+    val measureSampleHistory = fastahDatabase.measureSampleDao.latestMeasurements
+
     class Factory(private val application: Application, private val fastahDatabase: FastahDatabase) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return DashboardViewModel(application, fastahDatabase) as T
@@ -24,7 +26,7 @@ class DashboardViewModel(application: Application, private val fastahDatabase: F
 
     fun persistMeasurement(measureSample: MeasureSample) {
         viewModelScope.launch() {
-            val entity = MeasureSampleEntity(0, measureSample.timestamp, measureSample.latency, measureSample.networkName, measureSample.networkType)
+            val entity = MeasureSampleEntity(0, measureSample.timestamp, measureSample.latency, measureSample.networkName, measureSample.networkType, measureSample.networkState.name)
             withContext(Dispatchers.IO) {
                 fastahDatabase.measureSampleDao.insert(entity)
             }

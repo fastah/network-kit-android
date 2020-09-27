@@ -66,6 +66,9 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
+    // Recycler View
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
 
     // Fastah Network Kit core library
     implementation 'com.getfastah.networkkit:networkkit-android-core:1.9.16'

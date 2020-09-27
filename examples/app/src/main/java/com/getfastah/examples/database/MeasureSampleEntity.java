@@ -16,13 +16,16 @@ public class MeasureSampleEntity {
     private String networkName;
     @ColumnInfo(name = "networkType")
     private String networkType;
+    @ColumnInfo(name = "networkState")
+    private String networkState;
 
-    public MeasureSampleEntity(long entryId, long timestamp, long latency, String networkName, String networkType) {
+    public MeasureSampleEntity(long entryId, long timestamp, long latency, String networkName, String networkType, String networkState) {
         this.entryId = entryId;
         this.timestamp = timestamp;
         this.latency = latency;
         this.networkName = networkName;
         this.networkType = networkType;
+        this.networkState = networkState;
     }
 
     public long getEntryId() {
@@ -63,5 +66,13 @@ public class MeasureSampleEntity {
 
     public void setNetworkType(String networkType) {
         this.networkType = networkType;
+    }
+
+    public String getNetworkState() {
+        return networkState;
+    }
+
+    public void setNetworkState(String networkState) {
+        this.networkState = networkState;
     }
 }
