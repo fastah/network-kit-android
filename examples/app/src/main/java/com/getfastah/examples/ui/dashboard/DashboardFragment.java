@@ -41,19 +41,10 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final TextView textView = view.findViewById(R.id.text_dashboard);
 
         dashboardViewModel = new ViewModelProvider(this,
                 new DashboardViewModel.Factory(getActivity().getApplication(), mFastahDatabase))
                 .get(DashboardViewModel.class);
-
-        dashboardViewModel.getNetworkLatencyData().observe(getViewLifecycleOwner(), new Observer<MeasureSample>() {
-            @Override
-            public void onChanged(@Nullable MeasureSample s) {
-                dashboardViewModel.persistMeasurement(s);
-                textView.setText(s.toString());
-            }
-        });
 
         mAdapter = new DashboardRecyclerViewAdapter();
         mRecyclerView = view.findViewById(R.id.measure_sample_list);

@@ -69,6 +69,8 @@ dependencies {
     // Recycler View
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    // Gauge View
+    implementation 'com.ekn.gruzer.gaugelibrary:gaugelibrary:0.2.2'
 
     // Fastah Network Kit core library
     implementation 'com.getfastah.networkkit:networkkit-android-core:1.9.16'
