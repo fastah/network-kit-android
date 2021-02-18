@@ -9,7 +9,7 @@
 <!-- /MarkdownTOC -->
 
 <a name="list-of-examples"></a>
-# Examples with Fastah API
+# Examples with Fastah Network Kit - Android
 This repository provides sample code to build network-aware Android apps using Fastah Network Kit for Android. 
 
 <img src="animating-network-app.gif" width="50%">
