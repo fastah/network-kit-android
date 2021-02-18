@@ -86,7 +86,7 @@ While ensuring that the following matches your app's and organization security s
 
 Once you have configured the keys and configured security, you may launch the application, and monitor Fastah's initialization state using Android Studio's Logcat window: look for message prefix `FastahNetworkKit`.
 
-To start using `MeasureManager`, use the `getInstance` accessor below, such as from within your [Activity](examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java).
+To start using `MeasureManager`, use the `getInstance` accessor below, such as from within your [LiveData-derived class](examples/app/src/main/java/com/getfastah/examples/NetworkLatencyLiveData.java).
 
 ```java
 MeasureManager.getInstance(getApplicationContext()).measureOnce();
@@ -115,8 +115,8 @@ MeasureManager.getInstance(ctx).measureOnce();
 # I want to know more!
 
 No worries, here are some links that you will find useful:
-* **[Sample app](https://github.com/fastah/network-kit-android/blob/master/examples/app/src/main/java/com/getfastah/exampleswithfastahnetworkkit/SampleActivity.java)**
-* **[Full API Reference](https://fastahproject.com/pub/fastah-sdk-android/javadoc/)**
+* **[Sample app](examples/app/src/main/java/com/getfastah/examples/)**
+* **[Full API Reference](https://fastahproject.com/pub/fastah-sdk-android/javadoc/com/getfastah/networkkit/MeasureManager.html)**
 
 Have any questions? Reach out to [support@getfastah.com](mailto:support@getfastah.com) to speak to someone smart, quickly.
 
