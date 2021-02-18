@@ -10,7 +10,7 @@
 
 <a name="list-of-examples"></a>
 # Examples with Fastah Network Kit - Android
-This repository provides sample code to build network-aware Android apps using Fastah Network Kit for Android. 
+Fastah Network Kit helps you build apps that can sense and adapt to, changing mobile internet availability and connectivity. It allows you make UIs like the one below where a color-coded status bar shows the green, amber, or red status of the data network. 
 
 <img src="animating-network-app.gif" width="50%">
 
