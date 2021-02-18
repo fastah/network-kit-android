@@ -14,12 +14,14 @@ Fastah Network Kit helps you build apps that can sense and adapt to, changing mo
 
 <img src="animating-network-app.gif" width="50%">
 
-* Simple [app](examples/app/src/main/java/com/getfastah/examples/) that uses [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) to observe network latency using [NetworkLatencyLiveData.java](examples/app/src/main/java/com/getfastah/examples/NetworkLatencyLiveData.java)
+* Explore the [minimalist app](examples/app/src/main/java/com/getfastah/examples/) in this repo that uses [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) to observe network latency using [NetworkLatencyLiveData.java](examples/app/src/main/java/com/getfastah/examples/NetworkLatencyLiveData.java)
 
-<a name="installation"></a>
-## Installation
+<a name="Quick start"></a>
+## Quick start
 
-### Dependencies in *app/build.gradle*
+To integrate the Fastah Network Kit SDK into your Android application, follow the steps below. 
+
+### Add dependencies in *app/build.gradle*
 
 Add Fastah's Maven repository to the `repositories` section in *app/build.gradle*
 ```gradle
@@ -37,10 +39,7 @@ Next, add Fastah to the `dependencies` section in *app/build.gradle*
     implementation 'com.amazonaws:aws-android-sdk-kinesis:2.19.4'
 ```
 
-<a name="integration"></a>
-## Integration
-
-### Configuration
+### Configure the API key
 
 Before using Fastah's `MeasureManager` interface, configure the app-specific key in the [app's AndroidManifest.xml](examples/app/src/main/AndroidManifest.xml). Replace `YOUR_APPLICATION_ID` and `YOUR_APPLICATION_KEY` with the application ID (e.g "com.mycompany") and the key (e.g `fnk.XYZ`), obtained from the welcome email sent from [support@getfastah.com](mailto:support@getfastah.com). Now, build your app. 
 
@@ -49,7 +48,7 @@ Before using Fastah's `MeasureManager` interface, configure the app-specific key
 <meta-data android:name="com.getfastah.networkkit.MeasureConfig.ApplicationKey" android:value="YOUR_APPLICATION_KEY" />
 ```
 
-#### Permissions configuration
+#### Configure permissions
 The following permissions are merged automatically via the library's own Manifest file via [Android's manifest merging](https://developer.android.com/studio/build/manifest-merge.html).
 ```xml
 <!-- Normal permissions -->
@@ -63,7 +62,7 @@ The following permissions are merged automatically via the library's own Manifes
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
-#### Network security configuration
+#### Configure network security
 Ensure that your Manifest mentions an app-level [Android-standard network security configuration XML](https://developer.android.com/training/articles/security-config). For this, one needs to create a [res/xml/network_security_config.xml](examples/app/src/main/res/xml/network_security_config.xml) file and mention it in the Manifest's application attributes list as show below. 
 ```xml
 <manifest ... >
@@ -83,7 +82,7 @@ While ensuring that the following matches your app's and organization security s
 </network-security-config>
 ```
 
-### Running the application
+### Run the application
 
 Once you have configured the keys and configured security, you may launch the application, and monitor Fastah's initialization state using Android Studio's Logcat window: look for message prefix `FastahNetworkKit`.
 
@@ -93,7 +92,7 @@ To start using `MeasureManager`, use the `getInstance` accessor below, such as f
 MeasureManager.getInstance(getApplicationContext()).measureOnce();
 ```
 
-### Network sensing & Network watching
+### Sensing the network
 
 With the `MeasureManager` object created in [the previous step](#integration) a call to `measureOnce` is all you need to start measuring network conditions using Fastah's geo-distributed server endpoints.
 
