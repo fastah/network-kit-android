@@ -1,5 +1,5 @@
 <!-- MarkdownTOC -->
-- [Examples with Fastah API](#list-of-examples)
+- [Examples with Fastah Network Kit - Android](#list-of-examples)
 - [Quick Start Guide](#quick-start-guide)
     - [Installation](#installation)
     - [Integration](#integration)
