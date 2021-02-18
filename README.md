@@ -28,13 +28,12 @@ maven { url 'http://maven.getfastah.com/libs-release' }
 Next, add Fastah to the `dependencies` section in *app/build.gradle*
 ```gradle
     // Fastah Network Kit core library
-    implementation 'com.getfastah.networkkit:networkkit-android-core:1.9.16'
+    implementation 'com.getfastah.networkkit:networkkit-android-core:1.9.20'
     // Fastah Network Kit dependencies
-    implementation 'com.firebase:firebase-jobdispatcher:0.8.6'
-    implementation 'com.google.android.gms:play-services-location:17.0.0'
-    implementation 'com.google.firebase:firebase-iid:20.0.1'
-    implementation 'com.amazonaws:aws-android-sdk-core:2.16.4'
-    implementation 'com.amazonaws:aws-android-sdk-kinesis:2.16.4'
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    implementation 'com.google.firebase:firebase-iid:21.0.1'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.19.4'
+    implementation 'com.amazonaws:aws-android-sdk-kinesis:2.19.4'
 ```
 
 <a name="integration"></a>
