@@ -12,7 +12,7 @@
 # Examples with Fastah API
 This repository provides sample code to build network-aware Android apps using Fastah Network Kit for Android. 
 
-![Observing internet latency in your app's UI](animating-network-app.gif){:height="36px" width="36px"}
+<img src="animating-network-app.gif" width="50%">
 
 * Simple [app](examples/app/src/main/java/com/getfastah/examples/) that uses [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) to observe network latency using [NetworkLatencyLiveData.java](examples/app/src/main/java/com/getfastah/examples/NetworkLatencyLiveData.java)
 
